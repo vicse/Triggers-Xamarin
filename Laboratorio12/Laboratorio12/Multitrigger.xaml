@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Laboratorio12"
+             x:Class="Laboratorio12.Multitrigger">
+    <StackLayout>
+
+        <Label FontSize="Large" Text="MultiTrigger Example" />
+
+        <Label Text="You must provide either an email or phone number (or both):" />
+
+        <!-- the Entry x:Name are referenced below in the MultiTrigger -->
+        <!-- tip: make sure to set the Text="" (or some other default) -->
+
+        <Entry x:Name="email" Text="" Placeholder="email" />
+
+        <Entry x:Name="phone" Text="" Placeholder="phone" />
+
+        <Button x:Name="button" Text="Save"
+		        FontSize="Large"
+		        HorizontalOptions="Center">
+            <Button.Triggers>
+                <MultiTrigger TargetType="Button">
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding Source={x:Reference email},
+		                                       Path=Text.Length}"
+		                                   Value="0" />
+                        <BindingCondition Binding="{Binding Source={x:Reference phone},
+		                                       Path=Text.Length}"
+		                                   Value="0" />
+                    </MultiTrigger.Conditions>
+
+                    <Setter Property="IsEnabled" Value="False" />
+                </MultiTrigger>
+            </Button.Triggers>
+        </Button>
+
+
+        <BoxView HeightRequest="3" HorizontalOptions="CenterAndExpand"  WidthRequest="250" Color="Gray" />
+
+
+
+    </StackLayout>
+
+</ContentPage>

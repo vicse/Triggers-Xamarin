@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Laboratorio12;assembly=Laboratorio12" 
+             x:Class="Laboratorio12.HomePage">
+    <local:Property Title="Property" />
+    <local:Style Title="Style" />
+    <local:Data Title="Data" />
+    <local:Event Title="Event" />
+    <local:Multitrigger Title="Multitrigger" />
+
+</TabbedPage>
+
